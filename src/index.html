@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icon.png" type="image/png" sizes="16x16 32x32">
+    <title>Tasks</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="index.css">
+    <script defer src="./js/jquery.min.js"></script>
+    <script defer src="./js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+    <main>
+        <div class="container mt-3 p-0">
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >+</button>
+            <div class="row m-0 mt-4 w-100 ">
+                <!-- <p>You currently have {total} number of classes to join</p> -->
+                <table class="table table-dark w-100">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Time until</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tasksList">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">New task</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                      <label for="name" class="form-label">Name</label>
+                      <input type="text" class="form-control" id="name" aria-describedby="nameHelp" required>
+                      <div id="nameHelp" class="form-text">Name your class</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="type-select" class="col-form-label">Find meet link by:</label>
+                        <select class="form-select" id="type-select">
+                          <option value="0" selected>Please select an option</option>
+                          <option value="1">Classroom Name</option>
+                          <option value="2">Classroom Link</option>
+                          <option value="3">Meet Nickname/Code</option>
+                        </select>
+                      </div>
+                    <div class="mb-3" id="classIdentifier_wrapper">
+                      <label for="classIdentifier" class="form-label">Put here the selected identifier</label>
+                      <input type="text" class="form-control" id="classIdentifier">
+                    </div>
+
+                    <div class="mb-3 row">
+                        <label for="task-time" class="col-form-label">The time when you your class starts:</label>
+                        <div class="col-6">
+                          <input type="time" class="form-control" id="task-time" required>
+                        </div>
+                      </div>
+
+                      <div class="mb-3 row">
+                        <label for="task-interval" class="col-form-label">How many minutes should the bot stay in the meeting:</label>
+                        <div class="col-6">
+                          <input type="number" class="form-control" id="task-interval" min="1" max="1000" required>
+                        </div>
+                      </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="add-cofirm">Add task</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    <script defer src="form.js"></script>
+    <script defer src="render.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="index.css">
+    <script defer src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container" style="height: 100vh;">
+        <div class="m-auto w-50" style="text-align: center; position: relative;top: 50%; transform: translateY(-70%);">
+            <p>Log in and please dont exit the chrome window, just leave it, come back and press the button if you're done logging in!</p>
+            <button class="btn btn-primary btn-lg" id="continueButton" onclick="doneLoggingIn();" disabled>Continue</button>
+        </div>
+    </div>
+
+    <script defer>
+        setTimeout(() => {
+            document.getElementById('continueButton').disabled = false;
+        }, 10000);
+
+        function doneLoggingIn() {
+            const { ipcRenderer } = require('electron');
+            ipcRenderer.invoke('loginDone');
+        }
+    </script>
+</body>
+</html>
