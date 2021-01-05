@@ -121,3 +121,8 @@ function updateTimers(callBack) {
 
     return timer;
 }
+
+
+function deleteCookies() {
+    ipcRenderer.invoke('delete-cookies');
+}
