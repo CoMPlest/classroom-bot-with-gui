@@ -1,6 +1,6 @@
 # Classroom-bot
  A bot that automatically attends your calsses
-## installation
+## Installation
 - Go to the releases and download the installer
 - Run the installer and it will automatically launch the program
 ## How to use it
