@@ -100,14 +100,14 @@ module.exports = async function selenium_open(task) {
 async function getClassroomLink(classroom_meet_name, driver) {
   await driver.get(ClassroomUrl);
   await waitForPageLoad(driver);
-  await sleep(2);
+  await sleep(5);
   await (
     await driver.findElement(
       By.xpath('//div[text()="' + classroom_meet_name + '"]')
     )
   ).click();
   await waitForPageLoad(driver);
-  await sleep(1);
+  await sleep(3);
 
   let classroom_regex = /(https:\/\/meet\.google\.com\/lookup\/.*\?authuser)/g;
   await driver.get((await driver.getPageSource()).match(classroom_regex)[0]);

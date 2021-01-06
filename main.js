@@ -12,7 +12,7 @@ function createWindow () {
     }
   })
   nativeTheme.themeSouce = 'dark';
-  //win.setMenu(null);
+  win.setMenu(null);
   win.loadFile('./src/index.html');
 }
 
