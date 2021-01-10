@@ -23,7 +23,6 @@ let timer;
 //     }
 // });
 
-
 document.getElementById('add-cofirm').addEventListener('click', (e) => {
     const name = document.getElementById('name').value;
     const typeSelect = document.getElementById('type-select').value;
@@ -126,3 +125,18 @@ function updateTimers(callBack) {
 function deleteCookies() {
     ipcRenderer.invoke('delete-cookies');
 }
+
+function saveSchedule() {
+    ipcRenderer.invoke('save-queue', tasks);
+}
+
+function importSchedule() {
+    ipcRenderer.send('import-queue');
+}
+
+ipcRenderer.on('import-queue', (e, imported_tasks) => {
+    tasks = tasks.concat(imported_tasks);
+    refreshTasks();
+})
+
+

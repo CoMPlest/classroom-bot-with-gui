@@ -15,7 +15,10 @@
 
     <main>
         <div class="container mt-3 p-0">
-            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >+</button>
+            <button class="btn btn-primary mb-2" data-bs-toggle="modal" onclick="saveSchedule();">Save schedule</button>
+            <button class="btn btn-primary mb-2" data-bs-toggle="modal" onclick="importSchedule();">Import schedule</button>
+            <br>
+            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" >+</button>
             <button class="btn btn-danger" data-bs-toggle="modal" onclick="deleteCookies();">Delete Cookies</button>
             <div class="row m-0 mt-4 w-100 ">
                 <!-- <p>You currently have {total} number of classes to join</p> -->
