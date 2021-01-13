@@ -1,6 +1,7 @@
 # Classroom-bot
  A bot that automatically attends your calsses
 ## Installation
+- Note that in order for the app to work you need a selenium chrome driver installed in your path
 - Go to the releases and download the installer
 - Run the installer and it will automatically launch the program
 ## How to use it
